@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Odin's Recipes
+        </title>
+        <meta charset = "UTF-8">
+        <link href = "index.css" rel = "stylesheet">
+    </head>
+    <body onclick="myFunction()">
+        <div id = "left">
+            <div id = "topLeft">
+                <img id = "topLeftRecipe" src = "resources/spicyBeefAndGnocchi.jpg">
+                <img id = "topLeftFrame" src = "resources/coolFrame2.png">
+                <a id = "topLeftOverlay" href = "spicyBeefAndGnocchi.html" target = "_blank"">
+                    <div id = "topLeftHoverTitle">Spicy Beef & Gnocchi</div>
+                    <p id = "topLeftHoverDescription">Plump gnocchi, ground beef, and tender zucchini get a delicious kick from Calabrian chile paste, a specialty ingredient from southern Italy known for its irresistibly sweet-hot flavor.</p>
+                </a>
+            </div>
+            <div id = "bottomLeft"> 
+                <img id = "bottomLeftRecipe" src = "resources/ysacShepherdsPie.jpg">
+                <img id = "bottomLeftFrame" src ="resources/coolFrame2.png">
+                <a id = "bottomLeftOverlay" href = "shepherdsPie.html" target = "_blank">
+                    <div id = "bottomLeftHoverTitle">Shepherd's Pie</div>
+                    <p id = "bottomLeftHoverDescription">Shepherd's pie, cottage pie, or hachis Parmentier is a meat pie consisting of cooked minced meat topped with mashed potato. This dish originated from the United Kingdom, and is traditionally made with lamb or mutton.</p>
+                </a>
+            </div>
+        </div>
+
+        <div id = "middle">
+            <div id = "header">
+                <h1 id = "title">Odin's Recipes</h1>
+                <img id = "underline" src = resources/underline2.png>            
+            </div>
+            <div id = "gifContainer">
+                <img id = "gif" src = "resources/ramenGun.gif">
+            </div>
+            <a id = "sauce" target = "_blank" href = "https://www.youtube.com/watch?v=1BIqhTqrrZA">
+                Sauce: Assassination Classroom [Season 1 | Episode 19]</a>
+            <div id = "descriptionContainer">
+                <div id = "projectBy">
+                    Recipe project by: Lyrenide
+                    <a id = "TOPLink" target = "_blank" href = "https://www.theodinproject.com/about">
+                        <img id = "TOP" src = "resources/theOdinProject.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id = "right">
+            <div id = "topRight">
+                <img id = "topRightRecipe" src = "resources/padThai.jpg">
+                <img id = "topRightFrame" src = "resources/coolFrame2.png">
+                <a id = "topRightOverlay" href = "padThai.html" target = "_blank">
+                    <div id = "topRightHoverTitle">Pad Thai</div>
+                    <p id = "topRightHoverDescription">Pad Thai is stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts, a scrambled egg and bean sprouts. The ingredients are sautéed together in a wok and tossed in a delicious pad thai sauce.</p>
+                </a>
+            </div>
+            <div id = "bottomRight">
+                <img id = "bottomRightRecipe" src = "resources/firecrackeMeatballs.jpg">
+                <img id = "bottomRightFrame" src = "resources/coolFrame2.png">
+                <a id = "bottomRightOverlay" href = "firecrackerMeatballs.html" target = "_blank">
+                    <div id = "bottomRightHoverTitle">Firecracker Meatballs</div>
+                    <p id = "bottomRightHoverDescription">This recipe is here to blow up everything you think you know about meatballs. All dramatics aside, these meatballs are truly game-changing thanks to a certain onomatopoeic sauce.</p>
+                </a>
+            </div>
+        </div>
+        <div id = "shitpost">
+            <a id = "thing" href = "https://www.youtube.com/watch?v=QFb7xCaYaMc&list=PLkLnTkKXBSxjMGUBkL7cWc9IRtvNVu7Or&index=31" target = "_blank">
+            <img id = "yuyuko" src = "resources/yuyukoFumoCloseUp.jpg">
+            <audio id = "ResurrectionButterfly-80%Reflowering"><source src = "resources/borderOfLife.mp3"></source></audio>
+            </a>
+            <div class = "gimmeFood">"Gimme food." </div>
+            <div class = "gimmeFood"></div>
+            <div class = "gimmeFood">(Sorry for the Touhou shitpost)</div>
+            <div class = "gimmeFood">(Also sorry if the music scared you)</div>
+            <div class = "gimmeFood">(Why did I spend 4 hours on this)</div>
+        </div>
+        <script>
+           var saigyouji = document.getElementById('yuyuko'),
+           music = document.getElementById('ResurrectionButterfly-80%Reflowering')
+	        audios = document.querySelectorAll('audio');
+            console.log(audios);
+
+            saigyouji.addEventListener('mouseover', function() {
+            [].forEach.call(audios, function(audio) {
+            music.play();
+            });
+            }, false);
+
+            saigyouji.addEventListener('mouseleave', function() {
+            music.pause();
+            music.currentTime = 0;
+            }, false);
+
+            function myFunction() {
+                document.getElementById("shitpost").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

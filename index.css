@@ -1,0 +1,299 @@
+html{
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgb(182, 159, 97), rgb(128, 89, 24));
+}
+body    {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    position: relative;
+    margin: 0px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#middle{
+    display: inline-table;
+    text-align: center;
+    position: relative;
+    transform: translateY(-1.7vw);
+}
+
+#header {
+    position: relative;
+}
+#title{
+    position: relative;
+    font-family: "Norse";
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: -5px;
+    font-size: 5vw;
+    text-align: center;
+    color:rgb(236, 218, 139);
+    bottom: 2vw;
+    opacity: 0;
+    animation: intro 2s forwards;
+}
+
+#underline  {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    filter: invert(100%);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2s;
+}
+
+#gifContainer   {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 2em;
+    border: 7px white double;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.3s;
+    box-shadow: 0 0 2vw black;
+}
+
+#gif    {
+    margin-bottom: -0.5px;
+    display: block;
+    width: 30vw;
+}
+
+#sauce  {
+    font-size: 1.2vw;
+    margin-top: 0.3em;
+    display: block;
+    text-decoration: none;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.3s;
+}
+
+#sauce:hover  {
+    color: rgb(187, 187, 187);
+}
+
+#descriptionContainer   {
+    position: absolute;
+    border: 0.25vw dotted white;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 2%;
+    right: 50%;
+    transform: translate(50%);
+    width: 60%;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2.6s;
+}
+
+#projectBy  {
+    display: block;
+    color: white;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+}
+
+#TOP    {
+    margin: 0.5vw 0;
+    width: 17vw;
+    display: block;
+    transform: translateX(1.5%);
+}
+
+#left  {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+#topLeft, #bottomLeft   {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    pointer-events: none;
+    left: -30vw;
+    position: relative;
+    opacity: 0;
+    animation: leftSlide 2s forwards;
+    animation-delay: 2.8s;
+}
+
+#topLeft:hover, #bottomLeft:hover, #topRight:hover, #bottomRight:hover{
+    transform: scale(1.06);
+}
+
+#topLeftFrame, #bottomLeftFrame, #topRightFrame, #bottomRightFrame {
+    width: 22vw;
+    filter: hue-rotate(0deg) saturate(0);
+    display: block;
+    z-index: 2;
+}
+
+#topLeft:hover > #topLeftFrame, #bottomLeft:hover > #bottomLeftFrame, #topRight:hover > #topRightFrame, #bottomRight:hover > #bottomRightFrame {
+    transition: 0.75s;
+    filter: hue-rotate(-15deg) saturate(2);
+}
+
+#topLeftRecipe, #bottomLeftRecipe, #topRightRecipe, #bottomRightRecipe  {
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    display: inline;
+    object-fit: cover;
+    pointer-events: auto;
+    box-shadow: 0 0 2vw white;
+}
+
+#topLeft:hover > #topLeftRecipe, #bottomLeft:hover > #bottomLeftRecipe, #topRight:hover > #topRightRecipe, #bottomRight:hover > #bottomRightRecipe {
+    box-shadow: 0 0 4vw white;
+    transition-duration: 1s;
+}
+
+#topLeftOverlay, #bottomLeftOverlay, #topRightOverlay, #bottomRightOverlay {
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    background: rgba(0, 0, 0, 0);
+    color:#ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Architects_Daughter";
+    opacity: 0;
+    transition: 0.75s;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+#topLeftOverlay > *, #bottomLeftOverlay > *, #topRightOverlay > *, #bottomRightOverlay > * {
+    transform: translateY(1.5vw);
+    transition: transform 0.5s;
+}
+
+#topLeftOverlay:hover, #bottomLeftOverlay:hover, #topRightOverlay:hover, #bottomRightOverlay:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.65);
+
+}
+
+#topLeftOverlay:hover > *, #bottomLeftOverlay:hover > *, #topRightOverlay:hover > *, #bottomRightOverlay:hover > * {
+    transform: translateY(0.5vw);
+}
+
+#topLeftHoverTitle, #bottomLeftHoverTitle, #topRightHoverTitle, #bottomRightHoverTitle  {
+    display: block;
+    font-size: 1.6vw;
+    text-decoration: underline;
+    margin-top: 0.4vh;
+}
+
+#topLeftHoverDescription, #bottomLeftHoverDescription, #topRightHoverDescription, #bottomRightHoverDescription    {
+    font-size: 1vw;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+#right   {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+#topRight, #bottomRight    {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    pointer-events: none;
+    right: -30vw;
+    position: relative;
+    opacity: 0;
+    animation: rightSlide 2s forwards;
+    animation-delay: 2.8s;
+}
+
+#shitpost {
+    display: none;
+    position: absolute;
+    width: 4em;
+}
+
+.gimmeFood {
+    position: relative;
+    color: white;
+    background: black;
+    top: 3.8em;
+    display: inline-block;
+    width: 15em;
+    opacity: 0;
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+
+#yuyuko {
+    position: absolute;
+    width: 5em;
+    overflow: hidden;
+    top: 0;
+}
+
+#shitpost:hover > .gimmeFood{
+    transition: 120s linear;
+    top: 15em;
+    font-size: 10em;
+    animation: appear 4s 1s forwards;
+}
+
+#yuyuko:hover{
+    transition: 120s linear;
+    width: 190em;
+}
+
+@keyframes intro {
+    100% {bottom: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes leftSlide  {
+    100% {left:0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes rightSlide {
+    100% {right:0};
+    from {opacity:0} to {opacity:1};
+}
+@keyframes appear {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@font-face {
+    font-family: "Norse";
+    src: url(resources/Norse.otf);
+    
+}
+
+@font-face {
+    font-family: "Architects_Daughter";
+    src: url(resources/architectsDaughter.ttf);
+}
+

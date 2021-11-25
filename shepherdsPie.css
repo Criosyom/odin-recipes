@@ -1,0 +1,292 @@
+html   {
+    height: 100%;
+    margin: 0;
+}
+
+body   {
+    margin: 0;
+    background: linear-gradient(180deg, rgb(182, 159, 97), rgb(128, 89, 24)) fixed;
+    height: 100%;
+    overflow-anchor: none;
+}
+
+.imageLink {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    position: absolute;
+    object-fit: cover;
+    z-index: 2;
+    top: 17em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    border: 0.6em double white;
+    background: linear-gradient(to bottom, white, black);
+    background-size: cover;
+    background-origin: border-box;
+    box-shadow: 0 0 0px black;
+    animation: expand 1s forwards, Down 0.75s 0.5s forwards, Up 1s 0.9s forwards;
+    transform: scale(0.01);
+    transition: 0.3s;
+}
+
+.image:hover {
+    height: 11.5em;
+    width: 11.5em;
+}
+
+.container  {
+    position: relative;
+    top: 8em;
+    width: 45em;
+    height: 123em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5em double white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 1em;
+    background:rgb(59, 59, 59);
+
+}
+
+.content {
+    position: absolute;
+    width: 99%;
+    height: 99.5%;
+    box-sizing: border-box;
+    background: rgb(29, 29, 29);
+    border: double 0.2em transparent;
+    border-radius: 0.5em;
+    background-image: linear-gradient(rgb(26, 26, 26), rgb(26, 26, 26)), linear-gradient(to bottom, orange, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.underline  {
+    position: absolute;
+    border-top: 1.4em solid white;
+    border-bottom: 1.4em solid white;
+    border-left: 1.4em solid transparent;
+    border-right: 1.4em solid transparent;
+    margin-top: 0em;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: appear 0.9s 1.4s forwards, extend 1s 2.2s forwards;
+}
+
+.recipe {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1.5em;
+    font-size: 2.5em;
+    color: brown;
+    font-family: "Yuji Mai";
+    font-weight: normal;
+    opacity: 0;
+    animation: recipeAppear 1s 3s forwards;
+}
+
+.description {
+    
+    position: relative;
+    color: white;
+    width: 90%;
+    margin: 10em auto 0 auto;
+    font-family: "Amethysta";
+    opacity: 0;
+    animation: fadeIn 2s 3.5s forwards;
+}
+
+.info {
+    width: 70%;
+    height: 2.5em;
+    margin: 1em auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 0.25em double white;
+    border-radius: 2em;
+}
+
+.thymeContainer {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    margin-left: -1em;
+    height: 70%;
+    justify-content: space-between;
+}
+
+.clockContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 4.5%;
+}
+
+.thyme {
+    position: absolute;
+    left: 28%;
+}
+
+.serparator {
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.1em solid white;
+    height: 10%;
+}
+
+.servingsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 6.6em;    
+    margin-left: 5em;
+}
+
+.servings {
+    color: lightslategray;
+    font-family: "Comfortaa";
+    font-size: 1.1em;
+}
+
+.servingsAmount {
+    font-size: 1.1em;
+
+}
+
+.ingredientsContainer, .instructionsContainer, .nutritionContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3em;
+}
+.ingredientsDeco, .instructionsDeco, .nutritionDeco {
+    top: 0;
+    height: 0;
+    border-top: 0.8em solid white;
+    border-bottom: 0.8em solid white;
+    border-left: 0.8em solid transparent;
+    border-right: 0.8em solid transparent;
+    opacity: 0;
+    animation: fadeIn 1s 4s forwards, subExtend 1s 4.5s forwards;
+}
+
+.ingredientsText, .instructionsText, .nutritionText {
+    position: absolute;
+    font-size: 1.2em;
+    font-family: "Yuji Mai";
+    top: -0.15em;
+    opacity: 0;
+    animation: fadeIn 1s 5s forwards;
+}
+
+.ingredientsList {
+    color: white;
+    width: 90%;
+    font-family: "Amethysta";
+    line-height: 1.4em;
+    margin: 0.5em 0 1em 0;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.mashedPotatoes {
+    position: absolute;
+    font-family: "Comfortaa";
+    margin: 0.3em 0 0 1em;
+    color:rgb(218, 167, 28);
+    font-size: 1.2em;
+}
+
+.mashedPotatoesIngredients {
+    position: relative;
+    top: 1.9em;
+    font-family: "Amethysta";
+}
+
+.instructionsSteps {
+    color: white;
+    width: 90%;
+    font-family: "Amethysta";
+    margin-top: 1em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.instructionsSteps li {
+    margin-bottom: 1.5em;
+}
+
+.nutritionCase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    margin-top: 2em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.nutrition {
+    color: white;
+    font-family: "Amethysta";
+
+}
+
+@keyframes expand {
+    from {transform: scale(0.01)} to {transform: scale(1)};
+}
+@keyframes Down {
+    100% {top: 19em};
+}
+@keyframes Up {
+    100% {top: -7em};
+    from {box-shadow: 0 0 0px black} to {box-shadow: 0 0 2.5em black};
+}
+@keyframes appear {
+    from {opacity: 0} to {opacity: 1};
+    from {margin-top: 0em} to {margin-top: 6em};
+
+}
+@keyframes extend {
+    from {width: 0%} to {width: 70%};
+}
+@keyframes subExtend{
+    from  {width: 0%} to {width: 50%};
+}
+@keyframes recipeAppear{
+    from {margin-top: 1.5em} to {margin-top: 2.1em};
+    from {opacity: 0} to {opacity: 1};
+}
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@font-face {
+    font-family: "Yuji Mai";
+    src: url(resources/yujiMai.ttf);   
+}
+@font-face {
+    font-family: "Comfortaa";
+    src: url(resources/comfortaa.ttf);   
+}
+@font-face {
+    font-family: "Arvo";
+    src: url(resources/arvo.ttf);
+}
+@font-face {
+    font-family: "Amethysta";
+    src: url(resources/amethysta.ttf)
+}
